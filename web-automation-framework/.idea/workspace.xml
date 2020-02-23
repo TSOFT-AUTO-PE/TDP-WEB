@@ -25,7 +25,7 @@
   <component name="ProjectId" id="1V57SUtJ2jtO1BzZFtzF13tAaWd" />
   <component name="PropertiesComponent">
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../APPIUM/appium-automation-framework" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SIKULI/sikuli-automation-framework" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29770115" />
@@ -52,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Cucumber java.Feature: SAC-Interact">
+  <component name="RunManager" selected="TestNG.RunTest">
     <configuration name="Feature: MiMovistar_FlujoRecargas" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/MiMovistar_FlujoRecargas.feature" />
@@ -144,10 +144,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.RunTest" />
         <item itemvalue="Cucumber java.Feature: SAC-Interact" />
         <item itemvalue="Cucumber java.Feature: MiMovistar_FlujoRecargas" />
         <item itemvalue="Cucumber java.Feature: MyStore" />
-        <item itemvalue="TestNG.RunTest" />
       </list>
     </recent_temporary>
   </component>

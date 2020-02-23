@@ -1,12 +1,14 @@
 package com.tsoft.bot.frontend.pageobject.mimovistar;
 
+import org.sikuli.script.Pattern;
+
 public class PageObject_Recargas {
 
-    public static String TXT_NUMERO_MOVISTAR = "mat-input-0"; //id
-    public static String TXT_MONTO           = "mat-input-1"; //id
-    public static String BTN_CONTINUAR       = "/html/body/app-root/app-recarga-home/div/div[5]/div"; //xpath
-    public static String TXT_CORREO          = "mat-input-0"; //selector
-    public static String BTN_CONTINUAR2    = "/html/body/app-root/app-detail/div/div[5]/form/div[2]/button"; //xpath
+    public static String TXT_NUMERO_MOVISTAR    = "input_celular"; //id
+    public static String TXT_MONTO              = "input_monto"; //id
+    public static String BTN_CONTINUAR          = "button_recargar"; //id
+    public static final Pattern TXT_CORREO      = new Pattern("/src/main/resources/sikuli_images/txt_correo.PNG");
+    public static final Pattern BTN_CONTINUAR2  = new Pattern("/src/main/resources/sikuli_images/btn_continuar2.PNG");
     public static String TXT_NUMERO_TARJETA  = "/html/body/div/div/div[3]/form/div/div/div[13]/input"; //id
     public static String LIST_FV_MES        = "expiryDateMonthInput"; //id
     public static String LIST_FV_ANIO       = "expiryDateYearInput"; //id

@@ -1,16 +1,10 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("MiMovistar_FlujoRecargas.feature");
 formatter.feature({
-  "line": 2,
+  "line": 1,
   "name": "Mi Movistar Flujo de Recargas",
   "description": "",
   "id": "mi-movistar-flujo-de-recargas",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "line": 1,
-      "name": "@MiMovistar_Recargas"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.scenarioOutline({
   "line": 4,
@@ -18,7 +12,13 @@ formatter.scenarioOutline({
   "description": "",
   "id": "mi-movistar-flujo-de-recargas;recargas-en-mi-movistar",
   "type": "scenario_outline",
-  "keyword": "Scenario Outline"
+  "keyword": "Scenario Outline",
+  "tags": [
+    {
+      "line": 3,
+      "name": "@MiMovistar_Recargas"
+    }
+  ]
 });
 formatter.step({
   "line": 6,
@@ -99,11 +99,11 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 12491175800,
+  "duration": 12128071500,
   "status": "passed"
 });
 formatter.before({
-  "duration": 155340000,
+  "duration": 160443500,
   "status": "passed"
 });
 formatter.scenario({
@@ -115,7 +115,7 @@ formatter.scenario({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 1,
+      "line": 3,
       "name": "@MiMovistar_Recargas"
     }
   ]
@@ -209,7 +209,7 @@ formatter.match({
   "location": "MiMovistar_Recargas.seIngresaEnLaURLElTokenGenerado(String)"
 });
 formatter.result({
-  "duration": 11929522600,
+  "duration": 10294834500,
   "status": "passed"
 });
 formatter.match({
@@ -222,7 +222,7 @@ formatter.match({
   "location": "MiMovistar_Recargas.seIngresaElNumeroCelular(String)"
 });
 formatter.result({
-  "duration": 1467167400,
+  "duration": 2543066600,
   "status": "passed"
 });
 formatter.match({
@@ -235,14 +235,14 @@ formatter.match({
   "location": "MiMovistar_Recargas.montoARecargar(String)"
 });
 formatter.result({
-  "duration": 1115854300,
+  "duration": 1115190900,
   "status": "passed"
 });
 formatter.match({
   "location": "MiMovistar_Recargas.seDaClickEnElBotonContinuar()"
 });
 formatter.result({
-  "duration": 1155819900,
+  "duration": 5181885300,
   "status": "passed"
 });
 formatter.match({
@@ -255,7 +255,7 @@ formatter.match({
   "location": "MiMovistar_Recargas.seIngresaElEmailYSeDaClickEnContinuar(String)"
 });
 formatter.result({
-  "duration": 29892304200,
+  "duration": 6643079600,
   "status": "passed"
 });
 formatter.match({
@@ -266,50 +266,4 @@ formatter.match({
     }
   ],
   "location": "MiMovistar_Recargas.seIngresaElNumeroDeTarjeta(String)"
-});
-formatter.result({
-  "duration": 15720376500,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 34
-    }
-  ],
-  "location": "MiMovistar_Recargas.seIngresaElMesDeVencimiento(String)"
-});
-formatter.result({
-  "duration": 710767700,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 35
-    }
-  ],
-  "location": "MiMovistar_Recargas.seIngresaElAnioDeVencimiento(String)"
-});
-formatter.result({
-  "duration": 691464000,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1",
-      "offset": 38
-    }
-  ],
-  "location": "MiMovistar_Recargas.seIngresaElCodigoDeVerificacion(String)"
-});
-formatter.result({
-  "duration": 5687017300,
-  "status": "passed"
-});
-formatter.match({
-  "location": "MiMovistar_Recargas.seDaClickEnElBotonPagar()"
 });

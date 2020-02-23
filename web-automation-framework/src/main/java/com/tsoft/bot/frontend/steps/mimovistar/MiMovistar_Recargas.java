@@ -12,7 +12,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.sikuli.script.Region;
+import org.sikuli.script.Screen;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
@@ -109,10 +112,11 @@ public class MiMovistar_Recargas {
     @And("^se da click en el boton Continuar$")
     public void seDaClickEnElBotonContinuar() throws Throwable {
         try {
-            driver.findElement(By.xpath(BTN_CONTINUAR)).click();
+            driver.findElement(By.id(BTN_CONTINUAR)).click();
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se dió clic en el botón Contiuar");
             generateWord.sendText("Se dió clic en el botón Continuar ");
             generateWord.addImageToWord(driver);
+            Thread.sleep(4000);
         } catch (Exception e) {
             ExcelReader.writeCellValue(EXCEL_WEB, RECARGAS_WEB, 1, 10, "FAIL");
             ExtentReportUtil.INSTANCE.stepFail(driver, "Fallo el caso de prueba : " + e.getMessage());
@@ -125,14 +129,26 @@ public class MiMovistar_Recargas {
     @When("^se ingresa el email \"([^\"]*)\" y se da click en continuar$")
     public void seIngresaElEmailYSeDaClickEnContinuar(String casoDePrueba) throws Throwable {
         try {
+            Screen screen = new Screen();
             int recargas = Integer.parseInt(casoDePrueba) - 1;
             String correo = getData().get(recargas).get(COLUMNA_CORREO);
-            Thread.sleep(10000);
-            driver.findElement(xpath("/html/body")).click();
+            screen.wait(TXT_CORREO, 10000);
+            Region CoorPass = screen.find(TXT_CORREO).highlight(1, "green");
+            screen.click(TXT_CORREO);
+            Robot robot = new Robot();
+            String text = correo;
+            StringSelection stringSelection = new StringSelection(text);
+            Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+            clipboard.setContents(stringSelection, stringSelection);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_V);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            /*
+            driver.findElement(xpath("/html/body/")).click();
             Robot robot = new Robot();
             robot.keyPress(KeyEvent.VK_TAB);
             Thread.sleep(2000);
-
             String text = correo;
             StringSelection stringSelection = new StringSelection(text);
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -142,9 +158,13 @@ public class MiMovistar_Recargas {
             robot.keyRelease(KeyEvent.VK_V);
             robot.keyRelease(KeyEvent.VK_CONTROL);
             Thread.sleep(5000);
-            ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresa el correo: " + text);
-            generateWord.sendText("Se ingresa el correo: " + text);
+            driver.findElement(By.id(BTN_CONTINUAR2)).click();*/
+            ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresa el correo: " + correo);
+            generateWord.sendText("Se ingresa el correo: " + correo);
             generateWord.addImageToWord(driver);
+            screen.wait(BTN_CONTINUAR2, 5000);
+            Region CoorBtn = screen.find(BTN_CONTINUAR2).highlight(1, "green");
+            screen.click(BTN_CONTINUAR2);
 //           String a="mycorreo";
 //            char c;
 //            int d=a.length(),e=0,f=0;
@@ -156,14 +176,8 @@ public class MiMovistar_Recargas {
 //                e++;
 //                Thread.sleep(150);
 //            }
-            robot.keyPress(KeyEvent.VK_TAB);
-            Thread.sleep(5000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(2000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(2000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(2000);
+
+
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se dió clic en el botón Contiuar2");
             generateWord.sendText("Se dió clic en el botón Continuar 2");
             generateWord.addImageToWord(driver);
@@ -181,6 +195,10 @@ public class MiMovistar_Recargas {
     @And("^se ingresa el numero de tarjeta \"([^\"]*)\"$")
     public void seIngresaElNumeroDeTarjeta(String casoDePrueba) throws Throwable {
         try {
+            Screen screen = new Screen();
+            int recargas = Integer.parseInt(casoDePrueba) - 1;
+            String tarjeta = getData().get(recargas).get(COLUMNA_NUMTARJETA);
+            //screen.wait(TXT_NUMERO_TARJETA, 10000);
             Robot robot = new Robot();
             Thread.sleep(15000);
             robot.keyPress(KeyEvent.VK_4);
