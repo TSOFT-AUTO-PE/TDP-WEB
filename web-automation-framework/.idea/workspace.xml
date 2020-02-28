@@ -25,16 +25,20 @@
   <component name="ProjectId" id="1V57SUtJ2jtO1BzZFtzF13tAaWd" />
   <component name="PropertiesComponent">
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SIKULI/sikuli-automation-framework" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/excel" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29770115" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="inlay.hints" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tsoft.bot.frontend.utility" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\admin\Desktop\WEB\web-automation-framework\src\main\resources\excel" />
+      <recent name="C:\Users\admin\Desktop\WEB\web-automation-framework\src\main\java\com\tsoft\bot\frontend\utility" />
       <recent name="C:\Users\admin\Desktop\WEB\web-automation-framework\src\main\resources\features" />
       <recent name="C:\Users\admin\Desktop\web-automation-framework\web-automation-framework\src\main\resources\excel" />
       <recent name="C:\Users\admin\Desktop\web-automation-framework\src\main\resources\excel" />
@@ -52,18 +56,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.RunTest">
-    <configuration name="Feature: MiMovistar_FlujoRecargas" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/MiMovistar_FlujoRecargas.feature" />
-      <option name="GLUE" value="com.tsoft.bot.frontend.helpers com.tsoft.bot.frontend.steps.mimovistar" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+  <component name="RunManager" selected="Cucumber java.Feature: Servicios">
+    <configuration name="CallerJSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsoft.bot.frontend.utility.CallerJSON" />
       <module name="web-automation-framework" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: MiMovistar_FlujoRecargas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="PATTERN" value="com.tsoft.bot.frontend.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,17 +70,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: MyFlight_Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/MyFlight_Login.feature" />
-      <option name="GLUE" value="com.tsoft.bot.frontend.helpers com.tsoft.bot.frontend.steps.myflight" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+    <configuration name="CallerSOAP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsoft.bot.frontend.utility.CallerSOAP" />
       <module name="web-automation-framework" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: MyFlight_Login" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="PATTERN" value="com.tsoft.bot.frontend.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,17 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: MyStore" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/MyStore.feature" />
-      <option name="GLUE" value="com.tsoft.bot.frontend.helpers com.tsoft.bot.frontend.steps.MyStore" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
+    <configuration name="CallerSOAP_PaymentsManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsoft.bot.frontend.utility.CallerSOAP_PaymentsManagement" />
       <module name="web-automation-framework" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: MyStore" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
+          <option name="PATTERN" value="com.tsoft.bot.frontend.utility.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,14 +96,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: SAC-Interact" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: Servicios" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="1.2" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/SAC-Interact.feature" />
-      <option name="GLUE" value="com.tsoft.bot.frontend.helpers com.tsoft.bot.frontend.steps.sac" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Servicios.feature" />
+      <option name="GLUE" value="com.tsoft.bot.frontend.helpers com.tsoft.bot.frontend.steps.servicios" />
       <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="web-automation-framework" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
-      <option name="SUGGESTED_NAME" value="Feature: SAC-Interact" />
+      <option name="SUGGESTED_NAME" value="Feature: Servicios" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cucumber.api.cli.*" />
@@ -144,10 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber java.Feature: Servicios" />
         <item itemvalue="TestNG.RunTest" />
-        <item itemvalue="Cucumber java.Feature: SAC-Interact" />
-        <item itemvalue="Cucumber java.Feature: MiMovistar_FlujoRecargas" />
-        <item itemvalue="Cucumber java.Feature: MyStore" />
+        <item itemvalue="Application.CallerJSON" />
+        <item itemvalue="Application.CallerSOAP" />
+        <item itemvalue="Application.CallerSOAP_PaymentsManagement" />
       </list>
     </recent_temporary>
   </component>

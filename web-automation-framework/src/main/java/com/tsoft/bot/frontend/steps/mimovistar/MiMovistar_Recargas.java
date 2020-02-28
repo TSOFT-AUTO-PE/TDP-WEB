@@ -1,10 +1,7 @@
 package com.tsoft.bot.frontend.steps.mimovistar;
 
 import com.tsoft.bot.frontend.helpers.Hook;
-import com.tsoft.bot.frontend.utility.ExcelReader;
-import com.tsoft.bot.frontend.utility.ExtentReportUtil;
-import com.tsoft.bot.frontend.utility.GenerateWord;
-import com.tsoft.bot.frontend.utility.Sleeper;
+import com.tsoft.bot.frontend.utility.*;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -73,9 +70,9 @@ public class MiMovistar_Recargas {
     public void seIngresaElNumeroCelular(String casoDePrueba) throws Throwable {
         try {
             int recargas = Integer.parseInt(casoDePrueba) - 1;
-            driver.findElement(By.id(TXT_NUMERO_MOVISTAR)).clear();
+            driver.findElement(TXT_NUMERO_MOVISTAR).clear();
             String telefono = getData().get(recargas).get(COLUMNA_TELEFONO);
-            driver.findElement(By.id(TXT_NUMERO_MOVISTAR)).sendKeys(telefono);
+            driver.findElement(TXT_NUMERO_MOVISTAR).sendKeys(telefono);
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresó el telefono : " + telefono);
             generateWord.sendText("Se ingresó el telefono ");
             generateWord.addImageToWord(driver);
@@ -93,9 +90,9 @@ public class MiMovistar_Recargas {
     public void montoARecargar(String casoDePrueba) throws Throwable {
         try {
             int recargas = Integer.parseInt(casoDePrueba) - 1;
-            driver.findElement(By.id(TXT_MONTO)).clear();
+            driver.findElement(TXT_MONTO).clear();
             String monto = getData().get(recargas).get(COLUMNA_MONTO);
-            driver.findElement(By.id(TXT_MONTO)).sendKeys(monto);
+            driver.findElement(TXT_MONTO).sendKeys(monto);
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresó el monto en soles : " + monto);
             generateWord.sendText("Se ingresó el monto en soles ");
             generateWord.addImageToWord(driver);
@@ -112,7 +109,7 @@ public class MiMovistar_Recargas {
     @And("^se da click en el boton Continuar$")
     public void seDaClickEnElBotonContinuar() throws Throwable {
         try {
-            driver.findElement(By.id(BTN_CONTINUAR)).click();
+            driver.findElement(BTN_CONTINUAR).click();
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se dió clic en el botón Contiuar");
             generateWord.sendText("Se dió clic en el botón Continuar ");
             generateWord.addImageToWord(driver);
@@ -198,9 +195,10 @@ public class MiMovistar_Recargas {
             Screen screen = new Screen();
             int recargas = Integer.parseInt(casoDePrueba) - 1;
             String tarjeta = getData().get(recargas).get(COLUMNA_NUMTARJETA);
-            //screen.wait(TXT_NUMERO_TARJETA, 10000);
+            screen.wait(TXT_NUMERO_TARJETA, 20000);
+            Region Coor = screen.find(TXT_NUMERO_TARJETA).highlight(1, "green");
+            screen.click(TXT_NUMERO_TARJETA);
             Robot robot = new Robot();
-            Thread.sleep(15000);
             robot.keyPress(KeyEvent.VK_4);
             robot.keyPress(KeyEvent.VK_9);
             robot.keyPress(KeyEvent.VK_1);
@@ -217,8 +215,6 @@ public class MiMovistar_Recargas {
             robot.keyPress(KeyEvent.VK_0);
             robot.keyPress(KeyEvent.VK_6);
             robot.keyPress(KeyEvent.VK_7);
-            robot.keyPress(KeyEvent.VK_TAB);
-
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresó la tarjeta de crédito : 4919148107859067");
             generateWord.sendText("Se ingresó la tarjeta de crédito : 4919148107859067");
             generateWord.addImageToWord(driver);
@@ -234,12 +230,12 @@ public class MiMovistar_Recargas {
     @And("^se ingresa el mes de vencimiento \"([^\"]*)\"$")
     public void seIngresaElMesDeVencimiento(String arg0) throws Throwable {
         try {
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_DOWN);
-            robot.keyPress(KeyEvent.VK_DOWN);
-            robot.keyPress(KeyEvent.VK_DOWN);
-            robot.keyPress(KeyEvent.VK_TAB);
-
+            Screen screen = new Screen();
+            screen.wait(LIST_FECHVEN, 20000);
+            Region Coor = screen.find(LIST_FECHVEN).highlight(1, "green");
+            screen.click(LIST_FECHVEN);
+            screen.wait(SELECT_MES, 20000);
+            screen.click(SELECT_MES);
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresó el mes: 03");
             generateWord.sendText("Se ingresó el mes : 03");
             generateWord.addImageToWord(driver);
@@ -255,10 +251,12 @@ public class MiMovistar_Recargas {
     @And("^se ingresa el anio de vencimiento \"([^\"]*)\"$")
     public void seIngresaElAnioDeVencimiento(String arg0) throws Throwable {
         try {
-            Robot robot = new Robot();
-
-            robot.keyPress(KeyEvent.VK_DOWN);
-
+            Screen screen = new Screen();
+            screen.wait(LIST_ANIO, 20000);
+            Region Coor = screen.find(LIST_ANIO).highlight(1, "green");
+            screen.click(LIST_ANIO);
+            screen.wait(SELECT_ANIO, 20000);
+            screen.click(SELECT_ANIO);
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresó el año: 2020");
             generateWord.sendText("Se ingresó el año: 2020");
             generateWord.addImageToWord(driver);
@@ -274,14 +272,11 @@ public class MiMovistar_Recargas {
     @And("^se ingresa el codigo de verificacion \"([^\"]*)\"$")
     public void seIngresaElCodigoDeVerificacion(String arg0) throws Throwable {
         try{
-            Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_TAB);
-
-            robot.keyPress(KeyEvent.VK_7);
-            robot.keyPress(KeyEvent.VK_4);
-            robot.keyPress(KeyEvent.VK_0);
-            Thread.sleep(5000);
-            robot.keyPress(KeyEvent.VK_TAB);
+            Screen screen = new Screen();
+            screen.wait(TXT_CVV, 20000);
+            Region Coor = screen.find(TXT_CVV).highlight(1, "green");
+            screen.click(TXT_CVV);
+            screen.type("740");
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se ingresó EL CÓDIGO CVV: 740");
             generateWord.sendText("Se ingresó EL CÓDIGO CVV: 740");
             generateWord.addImageToWord(driver);
@@ -298,14 +293,12 @@ public class MiMovistar_Recargas {
     public void seDaClickEnElBotonPagar() throws Throwable {
         try {
             Robot robot = new Robot();
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(1000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(1000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(1000);
-            robot.keyPress(KeyEvent.VK_ENTER);
-            Thread.sleep(5000);
+            robot.keyPress(KeyEvent.VK_PAGE_DOWN);
+            Screen screen = new Screen();
+            screen.wait(BTN_PAGAR, 20000);
+            Region Coor = screen.find(BTN_PAGAR).highlight(1, "green");
+            screen.click(BTN_PAGAR);
+
         } catch (Exception e) {
             ExcelReader.writeCellValue(EXCEL_WEB, RECARGAS_WEB, 1, 10, "FAIL");
             ExtentReportUtil.INSTANCE.stepFail(driver, "Fallo el caso de prueba : " + e.getMessage());
@@ -317,7 +310,6 @@ public class MiMovistar_Recargas {
 
     @Then("^se verifica que se hizo la recarga correcta\\.$")
     public void seVerificaQueSeHizoLaRecargaCorrecta() throws Exception {
-        Thread.sleep(15000);
         if (driver.findElement(By.xpath(LBL_EXITO))!=null){
             System.out.println("Diferente de null");
             ExcelReader.writeCellValue(EXCEL_WEB, RECARGAS_WEB, 1, 10, "PASS");
@@ -331,5 +323,10 @@ public class MiMovistar_Recargas {
             generateWord.sendText("Falló el Flujo de Recarga");
             generateWord.addImageToWord(driver);
         }
+    }
+
+    @Given("^se genera la URL mediante el API_TEST_recargas$")
+    public void seGeneraLaURLMedianteElAPI_TEST_recargas() {
+        CallerJSON_MiMovistarRecarga.API_API_TEST_recargas();
     }
 }
