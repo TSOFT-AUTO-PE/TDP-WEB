@@ -1,5 +1,6 @@
 package com.tsoft.bot.frontend.helpers;
 
+import com.applitools.eyes.selenium.Eyes;
 import com.tsoft.bot.frontend.listener.Listener;
 import com.tsoft.bot.frontend.utility.FileHelper;
 import com.tsoft.bot.frontend.utility.GenerateWord;
@@ -35,6 +36,7 @@ public class Hook extends Listener {
 		onTestStart(scenario.getName());
 	}
 
+
 	@Before
 	public void setUpWeb() throws Throwable {
 		System.setProperty("webdriver.chrome.driver", FileHelper.getProjectFolder() + CHROME_DRIVER);
@@ -42,6 +44,7 @@ public class Hook extends Listener {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		generateWord.startUpWord();
+
 	}
 	
 	@After

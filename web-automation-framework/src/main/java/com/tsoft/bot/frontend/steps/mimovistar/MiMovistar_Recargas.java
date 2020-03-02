@@ -1,5 +1,6 @@
 package com.tsoft.bot.frontend.steps.mimovistar;
 
+import com.applitools.eyes.selenium.Eyes;
 import com.tsoft.bot.frontend.helpers.Hook;
 import com.tsoft.bot.frontend.utility.*;
 
@@ -25,7 +26,7 @@ import static com.tsoft.bot.frontend.pageobject.mimovistar.PageObject_Recargas.*
 import static org.openqa.selenium.By.*;
 
 public class MiMovistar_Recargas {
-
+    Eyes eyes = new Eyes();
     private static final String EXCEL_WEB = "excel/MiMovistar_Recargas.xlsx";
     private static final String RECARGAS_WEB = "Recargas";
     private static final String COLUMNA_URL = "URL";
@@ -50,10 +51,13 @@ public class MiMovistar_Recargas {
     @Given("^se ingresa en la URL el token generado \"([^\"]*)\"$")
     public void seIngresaEnLaURLElTokenGenerado(String casoDePrueba) throws Throwable {
         try {
+            eyes.setApiKey("Lar100101JK1askQKh2DloU01sRPcytdxf9KoY101r3wxGcpo110");
+            eyes.open(driver, "Mi Movistar", "Recargas");
             int recargas = Integer.parseInt(casoDePrueba) - 1;
             String url = getData().get(recargas).get(COLUMNA_URL);
             driver.get(url);
             Sleeper.Sleep(3500);
+            eyes.checkWindow("Inicio Recarga");
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se inició correctamente la página Mi Movistar con el token");
             generateWord.sendText("Se inició correctamente la página Mi Movistar con el token");
             generateWord.addImageToWord(driver);
@@ -130,6 +134,7 @@ public class MiMovistar_Recargas {
             int recargas = Integer.parseInt(casoDePrueba) - 1;
             String correo = getData().get(recargas).get(COLUMNA_CORREO);
             screen.wait(TXT_CORREO, 10000);
+            eyes.checkWindow("Ingreso Correo");
             Region CoorPass = screen.find(TXT_CORREO).highlight(1, "green");
             screen.click(TXT_CORREO);
             Robot robot = new Robot();
@@ -196,6 +201,7 @@ public class MiMovistar_Recargas {
             int recargas = Integer.parseInt(casoDePrueba) - 1;
             String tarjeta = getData().get(recargas).get(COLUMNA_NUMTARJETA);
             screen.wait(TXT_NUMERO_TARJETA, 20000);
+            eyes.checkWindow("Datos Tarjeta");
             Region Coor = screen.find(TXT_NUMERO_TARJETA).highlight(1, "green");
             screen.click(TXT_NUMERO_TARJETA);
             Robot robot = new Robot();
@@ -312,16 +318,19 @@ public class MiMovistar_Recargas {
     public void seVerificaQueSeHizoLaRecargaCorrecta() throws Exception {
         if (driver.findElement(By.xpath(LBL_EXITO))!=null){
             System.out.println("Diferente de null");
+            eyes.checkWindow("Verificación");
             ExcelReader.writeCellValue(EXCEL_WEB, RECARGAS_WEB, 1, 10, "PASS");
             ExtentReportUtil.INSTANCE.stepPass(driver, "Se finalizó correctamente el flujo");
             generateWord.sendText("Se finalizó correctamente el flujo");
             generateWord.addImageToWord(driver);
+            eyes.close();
         }else{
             System.out.println("IGUAL A NULL");
             ExcelReader.writeCellValue(EXCEL_WEB, RECARGAS_WEB, 1, 10, "FAIL");
             ExtentReportUtil.INSTANCE.stepFail(driver, "Falló el Flujo de Recarga");
             generateWord.sendText("Falló el Flujo de Recarga");
             generateWord.addImageToWord(driver);
+            eyes.close();
         }
     }
 

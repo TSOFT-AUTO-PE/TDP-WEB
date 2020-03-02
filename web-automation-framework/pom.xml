@@ -65,6 +65,8 @@
 			<artifactId>httpclient</artifactId>
 			<version>4.5.10</version>
 		</dependency>
+		<!-- Applitools SDK -->
+
 
 <!--		<dependency>-->
 <!--			<groupId>org.seleniumhq.selenium</groupId>-->
@@ -97,6 +99,11 @@
     		<groupId>com.google.guava</groupId>
     		<artifactId>guava</artifactId>
     		<version>22.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.applitools</groupId>
+			<artifactId>eyes-selenium-java3</artifactId>
+			<version>RELEASE</version>
 		</dependency>
 	</dependencies>
 	<build>

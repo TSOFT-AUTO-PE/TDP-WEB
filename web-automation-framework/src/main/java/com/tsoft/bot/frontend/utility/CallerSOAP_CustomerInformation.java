@@ -51,6 +51,12 @@ public class CallerSOAP_CustomerInformation {
 
         } catch (Throwable throwable) {
             throwable.printStackTrace();
+            try {
+                ExtentReportUtil.INSTANCE.stepFail(driver, "Connection timed out" );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     }
 

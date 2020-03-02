@@ -49,6 +49,12 @@ public class CallerSOAP_PaymentsManagement {
 
         } catch (Throwable throwable) {
             throwable.printStackTrace();
+            try {
+                ExtentReportUtil.INSTANCE.stepFail(driver, "Connection timed out" );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
@@ -121,8 +127,13 @@ public class CallerSOAP_PaymentsManagement {
             long finDate = System.currentTimeMillis();
             System.out.println("Tiempo de respuesta: " + ((finDate - inicioDate) / 1000.0) + " segs");
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+            try {
+                ExtentReportUtil.INSTANCE.stepFail(driver, "Connection timed out" );
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return response.toString();
     }

@@ -25,7 +25,7 @@
   <component name="ProjectId" id="1V57SUtJ2jtO1BzZFtzF13tAaWd" />
   <component name="PropertiesComponent">
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/excel" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/sikulixapi.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.29770115" />
@@ -70,8 +70,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CallerSOAP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tsoft.bot.frontend.utility.CallerSOAP" />
+    <configuration name="CallerSOAP_PaymentsManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tsoft.bot.frontend.utility.CallerSOAP_PaymentsManagement" />
       <module name="web-automation-framework" />
       <extension name="coverage">
         <pattern>
@@ -83,12 +83,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CallerSOAP_PaymentsManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tsoft.bot.frontend.utility.CallerSOAP_PaymentsManagement" />
+    <configuration name="Feature: MiMovistar_FlujoRecargas" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="1.2" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/MiMovistar_FlujoRecargas.feature" />
+      <option name="GLUE" value="com.tsoft.bot.frontend.helpers com.tsoft.bot.frontend.steps.mimovistar" />
+      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
       <module name="web-automation-framework" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvmSMFormatter --monochrome" />
+      <option name="SUGGESTED_NAME" value="Feature: MiMovistar_FlujoRecargas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tsoft.bot.frontend.utility.*" />
+          <option name="PATTERN" value="cucumber.api.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,10 +139,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Cucumber java.Feature: Servicios" />
-        <item itemvalue="TestNG.RunTest" />
-        <item itemvalue="Application.CallerJSON" />
-        <item itemvalue="Application.CallerSOAP" />
         <item itemvalue="Application.CallerSOAP_PaymentsManagement" />
+        <item itemvalue="Application.CallerJSON" />
+        <item itemvalue="TestNG.RunTest" />
+        <item itemvalue="Cucumber java.Feature: MiMovistar_FlujoRecargas" />
       </list>
     </recent_temporary>
   </component>
